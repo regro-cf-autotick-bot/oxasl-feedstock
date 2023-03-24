@@ -1,5 +1,5 @@
 {% set name = "oxasl" %}
-{% set version = "0.1.13" %}
+{% set version = "0.1.16.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/oxasl-{{ version }}.tar.gz
-  sha256: 910bbd8196a4b34bd55c865a670e74952c718f034e89d6a9e70c2b4b64e2a4ce
+  sha256: 531ea2bc4c95e19b5ff03976f104c709ccb8c33571a31dd589619c83473d9645
 
 build:
   number: 0
