@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/oxasl-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/oxasl-{{ version }}.tar.gz
   sha256: 910bbd8196a4b34bd55c865a670e74952c718f034e89d6a9e70c2b4b64e2a4ce
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - oxasl_preproc=oxasl.preproc:main
@@ -25,7 +25,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - sphinx
   run:
     - fslpy >=1.13
@@ -34,7 +34,7 @@ requirements:
     - pandas
     - pyaml
     - pyfab
-    - python >=3.6
+    - python >={{ python_min }}
     - scikit-image
     - six
 
@@ -50,6 +50,7 @@ test:
     - oxasl --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://oxasl.readthedocs.io/
